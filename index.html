@@ -68,7 +68,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-radius: 12px;
             border: 2px solid #e5e7eb;
             cursor: pointer;
@@ -357,14 +357,17 @@
                     <!-- SECTION 1: Basics -->
                     <section class="space-y-4">
                         <h3 class="sec-header">1. The Basics 📋</h3>
+
                         <div>
                             <label class="block text-sm font-bold mb-1">Full Name <span class="text-red-500">*</span></label>
                             <input type="text" id="f-name" class="inp" placeholder="Your full name" required>
                         </div>
+
                         <div>
                             <label class="block text-sm font-bold mb-1">How do you know me? <span class="text-red-500">*</span></label>
                             <input type="text" id="f-how-known" class="inp" placeholder="School friend, cousin, colleague..." required>
                         </div>
+
                         <div>
                             <label class="block text-sm font-bold mb-1">Years Known <span class="text-red-500">*</span></label>
                             <select id="f-years" class="inp">
@@ -377,10 +380,12 @@
                                 <option value="5+">5+ years</option>
                             </select>
                         </div>
+
                         <div>
                             <label class="block text-sm font-bold mb-1">Best Memory with me <span class="text-red-500">*</span></label>
                             <textarea id="f-memory" class="inp" placeholder="Tell me a great memory we share..." required></textarea>
                         </div>
+
                         <div>
                             <label class="block text-sm font-bold mb-1">Why should I give you salami? <span class="text-red-500">*</span></label>
                             <textarea id="f-why" class="inp" placeholder="Make your case..." required></textarea>
@@ -390,21 +395,23 @@
                     <!-- SECTION 2: Loyalty -->
                     <section class="space-y-4">
                         <h3 class="sec-header">2. Loyalty Test 💚</h3>
+
                         <div>
                             <label class="block text-sm font-bold mb-2">Am I your favorite? <span class="text-red-500">*</span></label>
                             <div class="space-y-2">
-                                <label class="radio-card"><input type="radio" name="favorite" value="yes_0.1"> Yes <span class="ml-auto text-green-600 text-xs">(+0.1)</span></label>
-                                <label class="radio-card"><input type="radio" name="favorite" value="obviously_0.2"> Obviously yes <span class="ml-auto text-green-600 text-xs">(+0.2)</span></label>
-                                <label class="radio-card"><input type="radio" name="favorite" value="100pct_0.2"> 100% yes <span class="ml-auto text-green-600 text-xs">(+0.2)</span></label>
+                                <label class="radio-card"><input type="radio" name="favorite" value="yes_0.1"> Yes</label>
+                                <label class="radio-card"><input type="radio" name="favorite" value="obviously_0.2"> Obviously yes</label>
+                                <label class="radio-card"><input type="radio" name="favorite" value="100pct_0.2"> 100% yes</label>
                             </div>
                         </div>
+
                         <div>
                             <label class="block text-sm font-bold mb-2">If I don't give salami, what will you do? <span class="text-red-500">*</span></label>
                             <div class="grid grid-cols-2 gap-2">
-                                <label class="radio-card"><input type="radio" name="reaction" value="cry_0.1"> 😢 Cry <span class="ml-auto text-green-600 text-xs">+0.1</span></label>
-                                <label class="radio-card"><input type="radio" name="reaction" value="complain_-0.1"> 😤 Complain <span class="ml-auto text-red-500 text-xs">-0.1</span></label>
-                                <label class="radio-card"><input type="radio" name="reaction" value="block_-0.2"> 🚫 Block <span class="ml-auto text-red-500 text-xs">-0.2</span></label>
-                                <label class="radio-card"><input type="radio" name="reaction" value="love_0.2"> ❤️ Still love u <span class="ml-auto text-green-600 text-xs">+0.2</span></label>
+                                <label class="radio-card"><input type="radio" name="reaction" value="cry_0.1"> 😢 Cry</label>
+                                <label class="radio-card"><input type="radio" name="reaction" value="complain_-0.1"> 😤 Complain</label>
+                                <label class="radio-card"><input type="radio" name="reaction" value="block_-0.2"> 🚫 Block</label>
+                                <label class="radio-card"><input type="radio" name="reaction" value="love_0.2"> ❤️ Still love u</label>
                             </div>
                         </div>
                     </section>
@@ -412,28 +419,29 @@
                     <!-- SECTION 3: Sports -->
                     <section class="space-y-4">
                         <h3 class="sec-header">3. Sports & Vibez ⚽</h3>
+
                         <div>
                             <label class="block text-sm font-bold mb-2">Best Football Club? <span class="text-red-500">*</span></label>
                             <div class="space-y-2">
-                                <label class="radio-card"><input type="radio" name="club" value="barca_0.3"> 🔵🔴 FC Barcelona <span class="ml-auto text-green-600 text-xs">(+0.3)</span></label>
-                                <label class="radio-card"><input type="radio" name="club" value="city_0.2"> 🔵 Manchester City <span class="ml-auto text-green-600 text-xs">(+0.2)</span></label>
-                                <label class="radio-card"><input type="radio" name="club" value="dortmund_0.1"> 🟡⚫ Borussia Dortmund <span class="ml-auto text-green-600 text-xs">(+0.1)</span></label>
-                                <label class="radio-card"><input type="radio" name="club" value="madrid_-0.2"> ⚪ Real Madrid <span class="ml-auto text-red-500 text-xs">(-0.2)</span></label>
+                                <label class="radio-card"><input type="radio" name="club" value="barca_0.3"> 🔵🔴 FC Barcelona</label>
+                                <label class="radio-card"><input type="radio" name="club" value="city_0.2"> 🔵 Manchester City</label>
+                                <label class="radio-card"><input type="radio" name="club" value="dortmund_0.1"> 🟡⚫ Borussia Dortmund</label>
+                                <label class="radio-card"><input type="radio" name="club" value="madrid_-0.2"> ⚪ Real Madrid</label>
                                 <label class="radio-card">
                                     <input type="radio" name="club" value="other_0.05" id="club-other-radio">
                                     Other club
-                                    <span class="ml-auto text-green-600 text-xs">(+0.05)</span>
                                 </label>
                                 <input type="text" id="f-club-other" class="inp section-hidden" placeholder="Which club?">
                             </div>
                         </div>
+
                         <div>
                             <label class="block text-sm font-bold mb-2">Do you consider cricket a sport? <span class="text-red-500">*</span></label>
                             <div class="space-y-2">
-                                <label class="radio-card"><input type="radio" name="cricket" value="yes_-0.5"> Yes <span class="ml-auto text-red-500 text-xs">(-0.5)</span></label>
-                                <label class="radio-card"><input type="radio" name="cricket" value="no_0.1"> No <span class="ml-auto text-green-600 text-xs">(+0.1)</span></label>
-                                <label class="radio-card"><input type="radio" name="cricket" value="defno_0.2"> Definitely Not <span class="ml-auto text-green-600 text-xs">(+0.2)</span></label>
-                                <label class="radio-card"><input type="radio" name="cricket" value="never_0.3"> Never heard of it <span class="ml-auto text-green-600 text-xs">(+0.3)</span></label>
+                                <label class="radio-card"><input type="radio" name="cricket" value="yes_-0.5"> Yes</label>
+                                <label class="radio-card"><input type="radio" name="cricket" value="no_0.1"> No</label>
+                                <label class="radio-card"><input type="radio" name="cricket" value="defno_0.2"> Definitely Not</label>
+                                <label class="radio-card"><input type="radio" name="cricket" value="never_0.3"> Never heard of it</label>
                             </div>
                         </div>
                     </section>
@@ -441,31 +449,27 @@
                     <!-- SECTION 4: Feedback -->
                     <section class="space-y-4">
                         <h3 class="sec-header">4. Your Feedback 🌟</h3>
+
                         <div>
                             <label class="block text-sm font-bold mb-2">Rate me (8–10 only!) <span class="text-red-500">*</span></label>
                             <div class="grid grid-cols-3 gap-3">
                                 <label class="radio-card flex-col text-center justify-center py-4">
                                     <input type="radio" name="rating" value="8_0.1">
                                     <span class="text-2xl font-bungee text-gray-700 mt-1">8</span>
-                                    <span class="text-green-600 text-xs">(+0.1)</span>
                                 </label>
                                 <label class="radio-card flex-col text-center justify-center py-4">
                                     <input type="radio" name="rating" value="9_0.2">
                                     <span class="text-2xl font-bungee text-gray-700 mt-1">9</span>
-                                    <span class="text-green-600 text-xs">(+0.2)</span>
                                 </label>
                                 <label class="radio-card flex-col text-center justify-center py-4">
                                     <input type="radio" name="rating" value="10_0.3">
                                     <span class="text-2xl font-bungee text-gray-700 mt-1">10</span>
-                                    <span class="text-green-600 text-xs">(+0.3)</span>
                                 </label>
                             </div>
                         </div>
+
                         <div>
-                            <label class="block text-sm font-bold mb-1">
-                                Compliment <span class="text-red-500">*</span>
-                                <span class="text-green-600 text-xs font-normal ml-1">(Bonus +0.1 if you say "goat" 🐐)</span>
-                            </label>
+                            <label class="block text-sm font-bold mb-1">Drop a compliment 💬 <span class="text-red-500">*</span></label>
                             <textarea id="f-compliment" class="inp" placeholder="Say something nice..." required></textarea>
                         </div>
                     </section>
@@ -473,19 +477,23 @@
                     <!-- SECTION 5: Verification -->
                     <section class="space-y-5">
                         <h3 class="sec-header" style="color:#dc2626; border-color:#fecaca;">5. Verification 🔍</h3>
+
                         <div class="warning-box">
                             ⚠️ WARNING: Submitting fake, edited, or AI-generated images will result in <u>immediate disqualification</u> from receiving salami. Don't try it.
                         </div>
 
                         <!-- Messenger -->
                         <div class="space-y-3">
-                            <label class="block text-sm font-bold">Personal Messenger convo with me?<br><span class="text-xs font-normal text-gray-500">(Group chats do NOT count)</span></label>
+                            <label class="block text-sm font-bold">
+                                Do we have a personal Messenger conversation?
+                                <br><span class="text-xs font-normal text-gray-500">(Group chats do NOT count)</span>
+                            </label>
                             <div class="space-y-2">
-                                <label class="radio-card"><input type="radio" name="messenger" value="yes_0.15" id="mess-yes"> Yes <span class="ml-auto text-green-600 text-xs">(+0.15)</span></label>
-                                <label class="radio-card"><input type="radio" name="messenger" value="no_-0.15" checked> No <span class="ml-auto text-red-500 text-xs">(-0.15)</span></label>
+                                <label class="radio-card"><input type="radio" name="messenger" value="yes_0.15" id="mess-yes"> Yes</label>
+                                <label class="radio-card"><input type="radio" name="messenger" value="no_-0.15" checked> No</label>
                             </div>
                             <div id="msg-upload" class="upload-area section-hidden">
-                                <p class="text-xs font-bold text-gray-600 mb-2">📎 Upload screenshot proof:</p>
+                                <p class="text-xs font-bold text-gray-600 mb-2">📎 Upload a screenshot as proof:</p>
                                 <input type="file" id="f-msg-file" accept="image/*" class="text-xs">
                             </div>
                         </div>
@@ -494,12 +502,12 @@
                         <div class="space-y-3">
                             <label class="block text-sm font-bold">Do you have a picture with me?</label>
                             <div class="space-y-2">
-                                <label class="radio-card"><input type="radio" name="pic-proof" value="no_-0.15" checked> No <span class="ml-auto text-red-500 text-xs">(-0.15)</span></label>
-                                <label class="radio-card"><input type="radio" name="pic-proof" value="duo_0.15" id="pic-duo"> Just the two of us 🤝 <span class="ml-auto text-green-600 text-xs">(+0.15)</span></label>
-                                <label class="radio-card"><input type="radio" name="pic-proof" value="group_0.05" id="pic-group"> Group photo 👥 <span class="ml-auto text-green-600 text-xs">(+0.05)</span></label>
+                                <label class="radio-card"><input type="radio" name="pic-proof" value="no_-0.15" checked> No</label>
+                                <label class="radio-card"><input type="radio" name="pic-proof" value="duo_0.15" id="pic-duo"> Yes, just the two of us</label>
+                                <label class="radio-card"><input type="radio" name="pic-proof" value="group_0.05" id="pic-group"> Yes, a group photo</label>
                             </div>
                             <div id="pic-upload" class="upload-area section-hidden">
-                                <p class="text-xs font-bold text-gray-600 mb-2">📎 Upload photo proof:</p>
+                                <p class="text-xs font-bold text-gray-600 mb-2">📎 Upload the photo as proof:</p>
                                 <input type="file" id="f-pic-file" accept="image/*" class="text-xs">
                             </div>
                         </div>
@@ -555,7 +563,7 @@
         </div>
 
         <!-- ============================================================ -->
-        <!-- DONE SECTION (fully submitted) -->
+        <!-- DONE SECTION -->
         <!-- ============================================================ -->
         <div id="done-section" class="section-hidden card p-8 text-center fade-in space-y-4">
             <div class="text-6xl">✅</div>
@@ -568,7 +576,7 @@
             <button id="replay-breakdown-btn" class="btn-outline section-hidden">📊 See My Breakdown Again</button>
         </div>
 
-        <!-- BREAKDOWN REPLAY (shown after clicking See Breakdown Again) -->
+        <!-- BREAKDOWN REPLAY -->
         <div id="breakdown-replay-section" class="section-hidden card p-6 fade-in">
             <h3 class="font-bungee text-gray-700 mb-4 text-lg">📊 Your Breakdown</h3>
             <div id="breakdown-replay-lines" class="space-y-0"></div>
@@ -592,8 +600,8 @@
         // ================================================================
         // SUPABASE INIT
         // ================================================================
-        const SUPABASE_URL = 'https://kysewtlrinchxcvswrtw.supabase.co';
-        const SUPABASE_ANON = 'sb_publishable_NaPxkE7heiuOfCOxY7kVDQ_GhXd-7cL';
+        const SUPABASE_URL = 'YOUR_SUPABASE_URL';       // 🔁 Replace this
+        const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';  // 🔁 Replace this
         const { createClient } = supabase;
         const db = createClient(SUPABASE_URL, SUPABASE_ANON);
 
@@ -685,7 +693,7 @@
         }
 
         // ================================================================
-        // INIT AFTER LOGIN — handles all 3 states
+        // INIT AFTER LOGIN — 3 states
         // ================================================================
         async function initAfterLogin() {
             const { data: { user } } = await db.auth.getUser();
@@ -699,20 +707,14 @@
 
             hide('auth-section');
 
-            // ---- STATE 1: Fully submitted ----
+            // STATE 1: Fully submitted
             if (existing && existing.submitted === true) {
                 $('done-amount').innerText = parseFloat(existing.salami).toFixed(2);
                 show('done-section');
-
                 if (existing.breakdown) {
                     show('replay-breakdown-btn');
                     $('replay-breakdown-btn').addEventListener('click', () => {
-                        renderBreakdownInto(
-                            'breakdown-replay-lines',
-                            'breakdown-replay-total',
-                            existing.breakdown,
-                            existing.salami
-                        );
+                        renderBreakdownInto('breakdown-replay-lines', 'breakdown-replay-total', existing.breakdown, existing.salami);
                         show('breakdown-replay-section');
                         $('replay-breakdown-btn').disabled = true;
                         $('replay-breakdown-btn').innerText = '📊 Breakdown Shown ✅';
@@ -721,7 +723,7 @@
                 return;
             }
 
-            // ---- STATE 2: Draft exists (calculated but bKash not submitted yet) ----
+            // STATE 2: Draft exists — show result + bKash where they left off
             if (existing && existing.submitted === false) {
                 computedResult = {
                     name: existing.name,
@@ -731,12 +733,9 @@
                         : existing.breakdown,
                     isExistingDraft: true
                 };
-
                 $('res-name').innerText = existing.name;
                 $('res-amount').innerText = parseFloat(existing.salami).toFixed(2);
                 show('result-section');
-
-                // Immediately show breakdown + bKash on restore
                 if (existing.breakdown) {
                     renderBreakdownInto('breakdown-lines', 'breakdown-total', existing.breakdown, existing.salami);
                     show('breakdown-section');
@@ -747,7 +746,7 @@
                 return;
             }
 
-            // ---- STATE 3: Brand new user ----
+            // STATE 3: Brand new user
             $('user-email-display').innerText = user.email;
             show('form-section');
         }
@@ -876,7 +875,7 @@
         }
 
         // ================================================================
-        // FORM SUBMIT — saves draft to DB immediately after calculate
+        // FORM SUBMIT
         // ================================================================
         let computedResult = null;
 
@@ -926,17 +925,15 @@
                 const { data: { user } } = await db.auth.getUser();
                 if (!user) throw new Error('Session expired. Please login again.');
 
-                // Upload images
                 let msgUrl = null, picUrl = null;
                 if (messengerYes && msgFile) msgUrl = await uploadImage(msgFile, 'messenger');
                 if (picYes && picFile) picUrl = await uploadImage(picFile, 'photos');
 
-                // Calculate score
                 const formData = { favorite, reaction, club, clubOther, cricket, rating, compliment, messenger, picProof };
                 const { total, breakdown } = calculateScore(formData);
                 const ratingNum = rating ? rating.split('_')[0] : null;
 
-                // ✅ SAVE DRAFT TO DB (submitted = false)
+                // Save draft immediately
                 const { error: draftError } = await db.from('users').insert({
                     email: user.email,
                     name: name,
@@ -963,21 +960,11 @@
 
                 if (draftError) throw new Error(draftError.message);
 
-                // Store for bKash step
-                computedResult = {
-                    name,
-                    salami: total,
-                    breakdown,
-                    isExistingDraft: true
-                };
+                computedResult = { name, salami: total, breakdown, isExistingDraft: true };
 
-                // Lock form
-                $('quest-form').querySelectorAll('input, select, textarea, button').forEach(el => {
-                    el.disabled = true;
-                });
+                $('quest-form').querySelectorAll('input, select, textarea, button').forEach(el => el.disabled = true);
                 $('quest-form').classList.add('locked-overlay');
 
-                // Show result screen
                 hide('form-section');
                 $('res-name').innerText = name;
                 $('res-amount').innerText = total.toFixed(2);
@@ -991,7 +978,7 @@
         });
 
         // ================================================================
-        // BREAKDOWN BUTTON (live result screen)
+        // BREAKDOWN BUTTON
         // ================================================================
         $('show-breakdown-btn').addEventListener('click', () => {
             if (!computedResult) return;
@@ -1003,17 +990,14 @@
         });
 
         // ================================================================
-        // BKASH SUBMIT — UPDATEs draft row, sets submitted = true
+        // BKASH SUBMIT
         // ================================================================
         $('final-submit-btn').addEventListener('click', async () => {
             const b1 = $('bkash1').value.trim();
             const b2 = $('bkash2').value.trim();
             const errEl = $('bkash-error');
 
-            function bkashError(msg) {
-                errEl.innerText = msg;
-                show('bkash-error');
-            }
+            function bkashError(msg) { errEl.innerText = msg; show('bkash-error'); }
             hide('bkash-error');
 
             if (!b1 || !b2) return bkashError('Please fill both bKash fields.');
@@ -1046,7 +1030,7 @@
                     return bkashError('This bKash number has already claimed salami. 🚫');
                 }
 
-                // ✅ UPDATE draft row — add bKash + mark as submitted
+                // Update draft → mark as fully submitted
                 const { error: updateError } = await db
                     .from('users')
                     .update({ bkash_number: b1, submitted: true })
@@ -1054,21 +1038,14 @@
 
                 if (updateError) throw new Error(updateError.message);
 
-                // Show done screen
                 hide('result-section');
                 $('done-amount').innerText = computedResult.salami.toFixed(2);
                 show('done-section');
 
-                // Show breakdown replay button
                 if (computedResult.breakdown) {
                     show('replay-breakdown-btn');
                     $('replay-breakdown-btn').addEventListener('click', () => {
-                        renderBreakdownInto(
-                            'breakdown-replay-lines',
-                            'breakdown-replay-total',
-                            computedResult.breakdown,
-                            computedResult.salami
-                        );
+                        renderBreakdownInto('breakdown-replay-lines', 'breakdown-replay-total', computedResult.breakdown, computedResult.salami);
                         show('breakdown-replay-section');
                         $('replay-breakdown-btn').disabled = true;
                         $('replay-breakdown-btn').innerText = '📊 Breakdown Shown ✅';
