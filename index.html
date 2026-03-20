@@ -43,7 +43,6 @@
             display: none !important;
         }
 
-        /* Inputs */
         .inp {
             width: 100%;
             padding: 12px 16px;
@@ -65,7 +64,6 @@
             cursor: pointer;
         }
 
-        /* Radio Cards */
         .radio-card {
             display: flex;
             align-items: center;
@@ -91,7 +89,6 @@
                 flex-shrink: 0;
             }
 
-        /* Buttons */
         .btn-green {
             width: 100%;
             background: linear-gradient(135deg, #16a34a, #15803d);
@@ -136,6 +133,12 @@
                 transform: translateY(-2px);
             }
 
+            .btn-blue:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+                transform: none;
+            }
+
         .btn-pink {
             width: 100%;
             background: linear-gradient(135deg, #db2777, #be185d);
@@ -177,7 +180,11 @@
                 background: #f0fdf4;
             }
 
-        /* Section headers */
+            .btn-outline:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+
         .sec-header {
             font-family: 'Bungee', cursive;
             font-size: 17px;
@@ -187,7 +194,6 @@
             margin-bottom: 16px;
         }
 
-        /* Warning box */
         .warning-box {
             background: #fff7ed;
             border: 2px solid #fed7aa;
@@ -199,7 +205,6 @@
             line-height: 1.5;
         }
 
-        /* Result */
         .salami-amount {
             font-family: 'Bungee', cursive;
             font-size: 60px;
@@ -207,7 +212,6 @@
             line-height: 1;
         }
 
-        /* Breakdown line */
         .breakdown-line {
             display: flex;
             justify-content: space-between;
@@ -236,7 +240,6 @@
             font-weight: 700;
         }
 
-        /* Spinner */
         .spinner {
             display: inline-block;
             width: 20px;
@@ -255,7 +258,6 @@
             }
         }
 
-        /* Upload area */
         .upload-area {
             border: 2px dashed #d1fae5;
             border-radius: 12px;
@@ -269,7 +271,6 @@
                 font-family: 'Nunito', sans-serif;
             }
 
-        /* Fade in */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -286,7 +287,6 @@
             animation: fadeIn 0.4s ease both;
         }
 
-        /* Emoji float */
         @keyframes float {
             0%,100% {
                 transform: translateY(0);
@@ -301,24 +301,9 @@
             animation: float 3s ease-in-out infinite;
         }
 
-        /* Locked overlay */
         .locked-overlay {
             pointer-events: none;
             opacity: 0.6;
-        }
-
-        /* Score badge */
-        .score-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #fef9c3, #fef3c7);
-            border: 2px solid #fbbf24;
-            border-radius: 50px;
-            padding: 6px 18px;
-            font-family: 'Bungee', cursive;
-            font-size: 15px;
-            color: #92400e;
         }
 
         textarea.inp {
@@ -331,9 +316,7 @@
 
     <div id="app" class="max-w-lg mx-auto space-y-4">
 
-        <!-- ============================================================ -->
-        <!-- HEADER (always visible) -->
-        <!-- ============================================================ -->
+        <!-- HEADER -->
         <div class="text-center py-4">
             <div class="float text-5xl mb-2">🌙</div>
             <h1 class="font-bungee text-4xl text-green-700 leading-tight">Salami Quest</h1>
@@ -344,15 +327,11 @@
         <!-- AUTH SECTION -->
         <!-- ============================================================ -->
         <div id="auth-section" class="card p-6 space-y-5 fade-in">
-
-            <!-- Email View -->
             <div id="email-view">
                 <p class="text-center text-gray-600 font-semibold mb-4">Enter your email to begin the quest 🚀</p>
                 <input type="email" id="email-input" placeholder="yourname@email.com" class="inp mb-3">
                 <button id="send-otp-btn" class="btn-green">Send OTP Code 📩</button>
             </div>
-
-            <!-- OTP View -->
             <div id="otp-view" class="section-hidden space-y-4 text-center">
                 <p class="text-gray-600 font-semibold">Check your email! Enter the 6-digit code:</p>
                 <input type="text" id="otp-input" placeholder="000000" maxlength="6"
@@ -360,7 +339,6 @@
                 <button id="verify-otp-btn" class="btn-blue">Verify & Start 🔑</button>
                 <button onclick="showEmailView()" class="text-xs text-gray-400 underline">← Change email</button>
             </div>
-
         </div>
 
         <!-- ============================================================ -->
@@ -368,7 +346,6 @@
         <!-- ============================================================ -->
         <div id="form-section" class="section-hidden fade-in space-y-4">
 
-            <!-- User bar -->
             <div class="card px-4 py-3 flex justify-between items-center text-sm">
                 <span class="font-bold text-gray-600">👤 <span id="user-email-display" class="text-green-700"></span></span>
                 <button onclick="logout()" class="text-red-500 font-bold text-xs underline">Logout</button>
@@ -377,20 +354,17 @@
             <div class="card p-6">
                 <form id="quest-form" class="space-y-8" novalidate>
 
-                    <!-- ===== SECTION 1: Basics ===== -->
+                    <!-- SECTION 1: Basics -->
                     <section class="space-y-4">
                         <h3 class="sec-header">1. The Basics 📋</h3>
-
                         <div>
                             <label class="block text-sm font-bold mb-1">Full Name <span class="text-red-500">*</span></label>
                             <input type="text" id="f-name" class="inp" placeholder="Your full name" required>
                         </div>
-
                         <div>
                             <label class="block text-sm font-bold mb-1">How do you know me? <span class="text-red-500">*</span></label>
                             <input type="text" id="f-how-known" class="inp" placeholder="School friend, cousin, colleague..." required>
                         </div>
-
                         <div>
                             <label class="block text-sm font-bold mb-1">Years Known <span class="text-red-500">*</span></label>
                             <select id="f-years" class="inp">
@@ -403,22 +377,19 @@
                                 <option value="5+">5+ years</option>
                             </select>
                         </div>
-
                         <div>
                             <label class="block text-sm font-bold mb-1">Best Memory with me <span class="text-red-500">*</span></label>
                             <textarea id="f-memory" class="inp" placeholder="Tell me a great memory we share..." required></textarea>
                         </div>
-
                         <div>
                             <label class="block text-sm font-bold mb-1">Why should I give you salami? <span class="text-red-500">*</span></label>
                             <textarea id="f-why" class="inp" placeholder="Make your case..." required></textarea>
                         </div>
                     </section>
 
-                    <!-- ===== SECTION 2: Loyalty ===== -->
+                    <!-- SECTION 2: Loyalty -->
                     <section class="space-y-4">
                         <h3 class="sec-header">2. Loyalty Test 💚</h3>
-
                         <div>
                             <label class="block text-sm font-bold mb-2">Am I your favorite? <span class="text-red-500">*</span></label>
                             <div class="space-y-2">
@@ -427,7 +398,6 @@
                                 <label class="radio-card"><input type="radio" name="favorite" value="100pct_0.2"> 100% yes <span class="ml-auto text-green-600 text-xs">(+0.2)</span></label>
                             </div>
                         </div>
-
                         <div>
                             <label class="block text-sm font-bold mb-2">If I don't give salami, what will you do? <span class="text-red-500">*</span></label>
                             <div class="grid grid-cols-2 gap-2">
@@ -439,10 +409,9 @@
                         </div>
                     </section>
 
-                    <!-- ===== SECTION 3: Sports ===== -->
+                    <!-- SECTION 3: Sports -->
                     <section class="space-y-4">
                         <h3 class="sec-header">3. Sports & Vibez ⚽</h3>
-
                         <div>
                             <label class="block text-sm font-bold mb-2">Best Football Club? <span class="text-red-500">*</span></label>
                             <div class="space-y-2">
@@ -458,7 +427,6 @@
                                 <input type="text" id="f-club-other" class="inp section-hidden" placeholder="Which club?">
                             </div>
                         </div>
-
                         <div>
                             <label class="block text-sm font-bold mb-2">Do you consider cricket a sport? <span class="text-red-500">*</span></label>
                             <div class="space-y-2">
@@ -470,10 +438,9 @@
                         </div>
                     </section>
 
-                    <!-- ===== SECTION 4: Feedback ===== -->
+                    <!-- SECTION 4: Feedback -->
                     <section class="space-y-4">
                         <h3 class="sec-header">4. Your Feedback 🌟</h3>
-
                         <div>
                             <label class="block text-sm font-bold mb-2">Rate me (8–10 only!) <span class="text-red-500">*</span></label>
                             <div class="grid grid-cols-3 gap-3">
@@ -494,7 +461,6 @@
                                 </label>
                             </div>
                         </div>
-
                         <div>
                             <label class="block text-sm font-bold mb-1">
                                 Compliment <span class="text-red-500">*</span>
@@ -504,17 +470,16 @@
                         </div>
                     </section>
 
-                    <!-- ===== SECTION 5: Verification ===== -->
+                    <!-- SECTION 5: Verification -->
                     <section class="space-y-5">
                         <h3 class="sec-header" style="color:#dc2626; border-color:#fecaca;">5. Verification 🔍</h3>
-
                         <div class="warning-box">
                             ⚠️ WARNING: Submitting fake, edited, or AI-generated images will result in <u>immediate disqualification</u> from receiving salami. Don't try it.
                         </div>
 
                         <!-- Messenger -->
                         <div class="space-y-3">
-                            <label class="block text-sm font-bold">Personal Messenger convo with me? <br><span class="text-xs font-normal text-gray-500">(Group chats do NOT count)</span></label>
+                            <label class="block text-sm font-bold">Personal Messenger convo with me?<br><span class="text-xs font-normal text-gray-500">(Group chats do NOT count)</span></label>
                             <div class="space-y-2">
                                 <label class="radio-card"><input type="radio" name="messenger" value="yes_0.15" id="mess-yes"> Yes <span class="ml-auto text-green-600 text-xs">(+0.15)</span></label>
                                 <label class="radio-card"><input type="radio" name="messenger" value="no_-0.15" checked> No <span class="ml-auto text-red-500 text-xs">(-0.15)</span></label>
@@ -543,7 +508,6 @@
                     <button type="submit" id="calc-btn" class="btn-green mt-4">
                         Calculate Salami 💰
                     </button>
-
                 </form>
             </div>
         </div>
@@ -552,24 +516,18 @@
         <!-- RESULT SECTION -->
         <!-- ============================================================ -->
         <div id="result-section" class="section-hidden fade-in space-y-4">
-
             <div class="card p-6 text-center space-y-4">
-                <div class="text-5xl float">🎉</div>
+                <div class="float text-5xl">🎉</div>
                 <h2 class="font-bungee text-3xl text-green-700">Eid Mubarak,<br><span id="res-name" class="text-green-500"></span>!</h2>
-
                 <p class="text-gray-500 text-sm">Your salami amount is:</p>
-
                 <div class="bg-yellow-50 border-4 border-yellow-200 rounded-3xl p-6 inline-block w-full">
                     <div class="salami-amount">৳<span id="res-amount">0.00</span></div>
                     <p class="text-yellow-700 font-bold text-sm mt-1">calculated just for you</p>
                 </div>
-
-                <button id="show-breakdown-btn" class="btn-outline mt-2">
-                    📊 See Calculation Breakdown
-                </button>
+                <button id="show-breakdown-btn" class="btn-outline mt-2">📊 See Calculation Breakdown</button>
             </div>
 
-            <!-- ===== BREAKDOWN ===== -->
+            <!-- BREAKDOWN -->
             <div id="breakdown-section" class="card p-6 section-hidden fade-in">
                 <h3 class="font-bungee text-gray-700 mb-4 text-lg">📊 Breakdown</h3>
                 <div id="breakdown-lines" class="space-y-0"></div>
@@ -579,11 +537,10 @@
                 </div>
             </div>
 
-            <!-- ===== BKASH SECTION ===== -->
+            <!-- BKASH -->
             <div id="bkash-section" class="card p-6 space-y-4 section-hidden fade-in">
                 <h3 class="font-bungee text-pink-600 text-lg">💸 Claim Your Eidi</h3>
                 <p class="text-sm text-gray-500">Enter your bKash number to receive salami</p>
-
                 <div>
                     <label class="block text-sm font-bold mb-1">bKash Number</label>
                     <input type="text" id="bkash1" placeholder="01XXXXXXXXX" maxlength="11" class="inp text-center tracking-widest font-bold text-lg">
@@ -592,18 +549,13 @@
                     <label class="block text-sm font-bold mb-1">Confirm bKash Number</label>
                     <input type="text" id="bkash2" placeholder="01XXXXXXXXX" maxlength="11" class="inp text-center tracking-widest font-bold text-lg">
                 </div>
-
                 <p id="bkash-error" class="text-red-500 text-xs font-bold text-center section-hidden"></p>
-
-                <button id="final-submit-btn" class="btn-pink">
-                    Claim My Eidi 🌸
-                </button>
+                <button id="final-submit-btn" class="btn-pink">Claim My Eidi 🌸</button>
             </div>
-
         </div>
 
         <!-- ============================================================ -->
-        <!-- ALREADY SUBMITTED SECTION -->
+        <!-- DONE SECTION (fully submitted) -->
         <!-- ============================================================ -->
         <div id="done-section" class="section-hidden card p-8 text-center fade-in space-y-4">
             <div class="text-6xl">✅</div>
@@ -613,11 +565,20 @@
                 <p class="text-sm text-gray-500">Your salami amount was</p>
                 <p class="font-bungee text-3xl text-yellow-600">৳<span id="done-amount"></span></p>
             </div>
+            <button id="replay-breakdown-btn" class="btn-outline section-hidden">📊 See My Breakdown Again</button>
         </div>
 
-        <!-- ============================================================ -->
+        <!-- BREAKDOWN REPLAY (shown after clicking See Breakdown Again) -->
+        <div id="breakdown-replay-section" class="section-hidden card p-6 fade-in">
+            <h3 class="font-bungee text-gray-700 mb-4 text-lg">📊 Your Breakdown</h3>
+            <div id="breakdown-replay-lines" class="space-y-0"></div>
+            <div class="breakdown-line mt-2 pt-2 border-t-2 border-gray-300">
+                <span class="font-bungee text-gray-800">TOTAL</span>
+                <span class="font-bungee text-2xl text-yellow-600">৳<span id="breakdown-replay-total"></span></span>
+            </div>
+        </div>
+
         <!-- GLOBAL MESSAGE -->
-        <!-- ============================================================ -->
         <div id="global-msg" class="section-hidden card px-4 py-3 text-center text-sm font-bold"></div>
 
         <p class="text-center text-gray-400 text-xs pb-6">Made with 💚 for Eid</p>
@@ -631,8 +592,8 @@
         // ================================================================
         // SUPABASE INIT
         // ================================================================
-        const SUPABASE_URL = 'https://kysewtlrinchxcvswrtw.supabase.co';   // 🔁 Replace this
-        const SUPABASE_ANON = 'sb_publishable_NaPxkE7heiuOfCOxY7kVDQ_GhXd-7cL'; // 🔁 Replace this
+        const SUPABASE_URL = 'YOUR_SUPABASE_URL';       // 🔁 Replace this
+        const SUPABASE_ANON = 'YOUR_SUPABASE_ANON_KEY';  // 🔁 Replace this
         const { createClient } = supabase;
         const db = createClient(SUPABASE_URL, SUPABASE_ANON);
 
@@ -640,7 +601,6 @@
         // HELPERS
         // ================================================================
         const $ = id => document.getElementById(id);
-
         function show(id) { $(id).classList.remove('section-hidden'); }
         function hide(id) { $(id).classList.add('section-hidden'); }
         function toggle(id, condition) { condition ? show(id) : hide(id); }
@@ -654,7 +614,6 @@
         }
 
         function parseScore(radioValue) {
-            // Format: "label_score" e.g. "yes_0.1" or "barca_0.3"
             const parts = radioValue.split('_');
             return parseFloat(parts[parts.length - 1]);
         }
@@ -662,6 +621,27 @@
         function getRadioValue(name) {
             const el = document.querySelector(`input[name="${name}"]:checked`);
             return el ? el.value : null;
+        }
+
+        // ================================================================
+        // BREAKDOWN RENDERER — reusable for both live + replay
+        // ================================================================
+        function renderBreakdownInto(linesId, totalId, breakdownData, total) {
+            const lines = typeof breakdownData === 'string' ? JSON.parse(breakdownData) : breakdownData;
+            const container = $(linesId);
+            container.innerHTML = '';
+            lines.forEach(line => {
+                const div = document.createElement('div');
+                div.className = 'breakdown-line';
+                const valClass = line.value > 0 ? 'pos' : (line.value < 0 ? 'neg' : 'neu');
+                const prefix = line.value > 0 ? '+' : '';
+                div.innerHTML = `
+                <span class="text-gray-700">${line.label}</span>
+                <span class="${valClass}">${prefix}${parseFloat(line.value).toFixed(2)}</span>
+            `;
+                container.appendChild(div);
+            });
+            $(totalId).innerText = parseFloat(total).toFixed(2);
         }
 
         // ================================================================
@@ -677,12 +657,9 @@
             if (!email) return showGlobalMsg('Please enter your email.');
             $('send-otp-btn').innerHTML = '<span class="spinner"></span> Sending...';
             $('send-otp-btn').disabled = true;
-
             const { error } = await db.auth.signInWithOtp({ email });
-
             $('send-otp-btn').innerHTML = 'Send OTP Code 📩';
             $('send-otp-btn').disabled = false;
-
             if (error) return showGlobalMsg(error.message);
             hide('email-view');
             show('otp-view');
@@ -695,12 +672,9 @@
             if (!token) return showGlobalMsg('Please enter the OTP code.');
             $('verify-otp-btn').innerHTML = '<span class="spinner"></span> Verifying...';
             $('verify-otp-btn').disabled = true;
-
             const { error } = await db.auth.verifyOtp({ email, token, type: 'email' });
-
             $('verify-otp-btn').innerHTML = 'Verify & Start 🔑';
             $('verify-otp-btn').disabled = false;
-
             if (error) return showGlobalMsg('Invalid or expired code. Try again.');
             await initAfterLogin();
         });
@@ -711,34 +685,74 @@
         }
 
         // ================================================================
-        // INIT AFTER LOGIN
+        // INIT AFTER LOGIN — handles all 3 states
         // ================================================================
         async function initAfterLogin() {
             const { data: { user } } = await db.auth.getUser();
             if (!user) return;
 
-            // Check if already submitted
             const { data: existing } = await db
                 .from('users')
-                .select('salami, bkash_number')
+                .select('salami, bkash_number, submitted, name, breakdown')
                 .eq('email', user.email)
                 .maybeSingle();
 
             hide('auth-section');
 
-            if (existing && existing.bkash_number) {
-                // Already fully submitted
+            // ---- STATE 1: Fully submitted ----
+            if (existing && existing.submitted === true) {
                 $('done-amount').innerText = parseFloat(existing.salami).toFixed(2);
                 show('done-section');
+
+                if (existing.breakdown) {
+                    show('replay-breakdown-btn');
+                    $('replay-breakdown-btn').addEventListener('click', () => {
+                        renderBreakdownInto(
+                            'breakdown-replay-lines',
+                            'breakdown-replay-total',
+                            existing.breakdown,
+                            existing.salami
+                        );
+                        show('breakdown-replay-section');
+                        $('replay-breakdown-btn').disabled = true;
+                        $('replay-breakdown-btn').innerText = '📊 Breakdown Shown ✅';
+                    });
+                }
                 return;
             }
 
-            // Show form
+            // ---- STATE 2: Draft exists (calculated but bKash not submitted yet) ----
+            if (existing && existing.submitted === false) {
+                computedResult = {
+                    name: existing.name,
+                    salami: existing.salami,
+                    breakdown: typeof existing.breakdown === 'string'
+                        ? JSON.parse(existing.breakdown)
+                        : existing.breakdown,
+                    isExistingDraft: true
+                };
+
+                $('res-name').innerText = existing.name;
+                $('res-amount').innerText = parseFloat(existing.salami).toFixed(2);
+                show('result-section');
+
+                // Immediately show breakdown + bKash on restore
+                if (existing.breakdown) {
+                    renderBreakdownInto('breakdown-lines', 'breakdown-total', existing.breakdown, existing.salami);
+                    show('breakdown-section');
+                    show('bkash-section');
+                    $('show-breakdown-btn').disabled = true;
+                    $('show-breakdown-btn').innerText = '📊 Breakdown Shown ✅';
+                }
+                return;
+            }
+
+            // ---- STATE 3: Brand new user ----
             $('user-email-display').innerText = user.email;
             show('form-section');
         }
 
-        // On page load, check session
+        // Check session on page load
         (async () => {
             const { data: { user } } = await db.auth.getUser();
             if (user) await initAfterLogin();
@@ -762,9 +776,7 @@
             });
         });
 
-        $('club-other-radio').addEventListener('change', () => {
-            show('f-club-other');
-        });
+        $('club-other-radio').addEventListener('change', () => show('f-club-other'));
         document.querySelectorAll('input[name="club"]:not(#club-other-radio)').forEach(r => {
             r.addEventListener('change', () => hide('f-club-other'));
         });
@@ -777,7 +789,6 @@
             let total = 5.0;
             breakdown.push({ label: 'Base Salami', value: 5.0 });
 
-            // Favorite
             const fav = formData.favorite;
             if (fav) {
                 const s = parseScore(fav);
@@ -786,25 +797,28 @@
                 total += s;
             }
 
-            // Reaction
             const rea = formData.reaction;
             if (rea) {
                 const s = parseScore(rea);
-                const labels = { 'cry_0.1': 'Reaction: Cry', 'complain_-0.1': 'Reaction: Complain', 'block_-0.2': 'Reaction: Block', 'love_0.2': 'Reaction: Still love u' };
+                const labels = { 'cry_0.1': 'Reaction: Cry 😢', 'complain_-0.1': 'Reaction: Complain 😤', 'block_-0.2': 'Reaction: Block 🚫', 'love_0.2': 'Reaction: Still love u ❤️' };
                 breakdown.push({ label: labels[rea] || 'Reaction', value: s });
                 total += s;
             }
 
-            // Club
             const club = formData.club;
             if (club) {
                 const s = parseScore(club);
-                const clubNames = { 'barca_0.3': 'Club: FC Barcelona', 'city_0.2': 'Club: Manchester City', 'dortmund_0.1': 'Club: Borussia Dortmund', 'madrid_-0.2': 'Club: Real Madrid', 'other_0.05': `Club: ${formData.clubOther || 'Other'}` };
+                const clubNames = {
+                    'barca_0.3': 'Club: FC Barcelona 🔵🔴',
+                    'city_0.2': 'Club: Manchester City 🔵',
+                    'dortmund_0.1': 'Club: Borussia Dortmund 🟡⚫',
+                    'madrid_-0.2': 'Club: Real Madrid ⚪',
+                    'other_0.05': `Club: ${formData.clubOther || 'Other'}`
+                };
                 breakdown.push({ label: clubNames[club] || 'Club', value: s });
                 total += s;
             }
 
-            // Cricket
             const cric = formData.cricket;
             if (cric) {
                 const s = parseScore(cric);
@@ -813,25 +827,20 @@
                 total += s;
             }
 
-            // Rating
             const rat = formData.rating;
             if (rat) {
                 const s = parseScore(rat);
                 const ratingNum = rat.split('_')[0];
-                breakdown.push({ label: `Rating: ${ratingNum}/10`, value: s });
+                breakdown.push({ label: `Rating: ${ratingNum}/10 ⭐`, value: s });
                 total += s;
             }
 
-            // Compliment + GOAT bonus
             const comp = formData.compliment || '';
-            if (comp) {
-                if (comp.toLowerCase().includes('goat')) {
-                    breakdown.push({ label: 'Compliment: Contains "goat" 🐐 Bonus!', value: 0.1 });
-                    total += 0.1;
-                }
+            if (comp && comp.toLowerCase().includes('goat')) {
+                breakdown.push({ label: 'Compliment: Contains "goat" 🐐 Bonus!', value: 0.1 });
+                total += 0.1;
             }
 
-            // Messenger
             const mess = formData.messenger;
             if (mess) {
                 const s = parseScore(mess);
@@ -839,7 +848,6 @@
                 total += s;
             }
 
-            // Photo
             const pic = formData.picProof;
             if (pic) {
                 const s = parseScore(pic);
@@ -859,7 +867,7 @@
             if (!file) return null;
             const ext = file.name.split('.').pop();
             const filename = `${folder}/${Date.now()}_${Math.random().toString(36).slice(2)}.${ext}`;
-            const { data, error } = await db.storage
+            const { error } = await db.storage
                 .from('salami-proofs')
                 .upload(filename, file, { contentType: file.type });
             if (error) throw new Error('Image upload failed: ' + error.message);
@@ -868,14 +876,13 @@
         }
 
         // ================================================================
-        // FORM SUBMIT
+        // FORM SUBMIT — saves draft to DB immediately after calculate
         // ================================================================
         let computedResult = null;
 
         $('quest-form').addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // --- Collect & Validate ---
             const name = $('f-name').value.trim();
             const howKnown = $('f-how-known').value.trim();
             const years = $('f-years').value;
@@ -891,7 +898,6 @@
             const messenger = getRadioValue('messenger');
             const picProof = getRadioValue('pic-proof');
 
-            // Basic required checks
             if (!name) return showGlobalMsg('Name is required.');
             if (!howKnown) return showGlobalMsg('How you know me is required.');
             if (!years) return showGlobalMsg('Please select years known.');
@@ -905,21 +911,21 @@
             if (!rating) return showGlobalMsg('Please rate me.');
             if (!compliment) return showGlobalMsg('Please write a compliment.');
 
-            // Upload file checks
             const messengerYes = messenger && messenger.startsWith('yes');
             const picYes = picProof && (picProof.startsWith('duo') || picProof.startsWith('group'));
-
             const msgFile = $('f-msg-file').files[0];
             const picFile = $('f-pic-file').files[0];
 
             if (messengerYes && !msgFile) return showGlobalMsg('Please upload your Messenger screenshot.');
             if (picYes && !picFile) return showGlobalMsg('Please upload your photo proof.');
 
-            // --- Disable form ---
             $('calc-btn').disabled = true;
             $('calc-btn').innerHTML = '<span class="spinner"></span> Calculating...';
 
             try {
+                const { data: { user } } = await db.auth.getUser();
+                if (!user) throw new Error('Session expired. Please login again.');
+
                 // Upload images
                 let msgUrl = null, picUrl = null;
                 if (messengerYes && msgFile) msgUrl = await uploadImage(msgFile, 'messenger');
@@ -928,31 +934,50 @@
                 // Calculate score
                 const formData = { favorite, reaction, club, clubOther, cricket, rating, compliment, messenger, picProof };
                 const { total, breakdown } = calculateScore(formData);
+                const ratingNum = rating ? rating.split('_')[0] : null;
 
-                // Store for later DB save
-                computedResult = {
-                    name, howKnown, years, memory, why, compliment,
+                // ✅ SAVE DRAFT TO DB (submitted = false)
+                const { error: draftError } = await db.from('users').insert({
+                    email: user.email,
+                    name: name,
+                    how_known: howKnown,
+                    years_known: years,
+                    best_memory: memory,
+                    why_salami: why,
                     favorite_answer: favorite,
-                    reaction,
-                    club,
-                    club_other: clubOther,
-                    cricket,
-                    rating,
+                    reaction: reaction,
+                    club: club,
+                    club_other: clubOther || null,
+                    cricket: cricket,
+                    rating: ratingNum,
+                    compliment: compliment,
                     messenger_proof: messengerYes,
-                    messenger_image_url: msgUrl,
+                    messenger_image_url: msgUrl || null,
                     photo_proof_type: picYes ? (picProof.startsWith('duo') ? 'duo' : 'group') : 'none',
-                    photo_image_url: picUrl,
+                    photo_image_url: picUrl || null,
+                    bkash_number: null,
                     salami: total,
-                    breakdown
+                    breakdown: JSON.stringify(breakdown),
+                    submitted: false
+                });
+
+                if (draftError) throw new Error(draftError.message);
+
+                // Store for bKash step
+                computedResult = {
+                    name,
+                    salami: total,
+                    breakdown,
+                    isExistingDraft: true
                 };
 
-                // Lock the form
+                // Lock form
                 $('quest-form').querySelectorAll('input, select, textarea, button').forEach(el => {
                     el.disabled = true;
                 });
                 $('quest-form').classList.add('locked-overlay');
 
-                // Show result
+                // Show result screen
                 hide('form-section');
                 $('res-name').innerText = name;
                 $('res-amount').innerText = total.toFixed(2);
@@ -966,28 +991,11 @@
         });
 
         // ================================================================
-        // BREAKDOWN
+        // BREAKDOWN BUTTON (live result screen)
         // ================================================================
         $('show-breakdown-btn').addEventListener('click', () => {
             if (!computedResult) return;
-
-            const container = $('breakdown-lines');
-            container.innerHTML = '';
-
-            computedResult.breakdown.forEach(line => {
-                const div = document.createElement('div');
-                div.className = 'breakdown-line';
-                const valClass = line.value > 0 ? 'pos' : (line.value < 0 ? 'neg' : 'neu');
-                const prefix = line.value > 0 ? '+' : '';
-                div.innerHTML = `
-                <span class="text-gray-700">${line.label}</span>
-                <span class="${valClass}">${prefix}${line.value.toFixed(2)}</span>
-            `;
-                container.appendChild(div);
-            });
-
-            $('breakdown-total').innerText = computedResult.salami.toFixed(2);
-
+            renderBreakdownInto('breakdown-lines', 'breakdown-total', computedResult.breakdown, computedResult.salami);
             show('breakdown-section');
             show('bkash-section');
             $('show-breakdown-btn').disabled = true;
@@ -995,7 +1003,7 @@
         });
 
         // ================================================================
-        // BKASH SUBMIT
+        // BKASH SUBMIT — UPDATEs draft row, sets submitted = true
         // ================================================================
         $('final-submit-btn').addEventListener('click', async () => {
             const b1 = $('bkash1').value.trim();
@@ -1008,7 +1016,6 @@
             }
             hide('bkash-error');
 
-            // Validations
             if (!b1 || !b2) return bkashError('Please fill both bKash fields.');
             if (b1.length !== 11) return bkashError('bKash number must be exactly 11 digits.');
             if (!b1.startsWith('01')) return bkashError('bKash number must start with 01.');
@@ -1039,49 +1046,34 @@
                     return bkashError('This bKash number has already claimed salami. 🚫');
                 }
 
-                // Check if email already submitted (double-check)
-                const { data: emailCheck } = await db
+                // ✅ UPDATE draft row — add bKash + mark as submitted
+                const { error: updateError } = await db
                     .from('users')
-                    .select('id')
-                    .eq('email', user.email)
-                    .maybeSingle();
+                    .update({ bkash_number: b1, submitted: true })
+                    .eq('email', user.email);
 
-                if (emailCheck) {
-                    return bkashError('You have already submitted. No second chances! 😄');
-                }
+                if (updateError) throw new Error(updateError.message);
 
-                // Build rating number label
-                const ratingNum = computedResult.rating ? computedResult.rating.split('_')[0] : null;
-
-                // Save to DB
-                const { error: insertError } = await db.from('users').insert({
-                    email: user.email,
-                    name: computedResult.name,
-                    how_known: computedResult.howKnown,
-                    years_known: computedResult.years,
-                    best_memory: computedResult.memory,
-                    why_salami: computedResult.why,
-                    favorite_answer: computedResult.favorite_answer,
-                    reaction: computedResult.reaction,
-                    club: computedResult.club,
-                    club_other: computedResult.club_other || null,
-                    cricket: computedResult.cricket,
-                    rating: ratingNum,
-                    compliment: computedResult.compliment,
-                    messenger_proof: computedResult.messenger_proof,
-                    messenger_image_url: computedResult.messenger_image_url || null,
-                    photo_proof_type: computedResult.photo_proof_type,
-                    photo_image_url: computedResult.photo_image_url || null,
-                    bkash_number: b1,
-                    salami: computedResult.salami,
-                });
-
-                if (insertError) throw new Error(insertError.message);
-
-                // Success!
+                // Show done screen
                 hide('result-section');
                 $('done-amount').innerText = computedResult.salami.toFixed(2);
                 show('done-section');
+
+                // Show breakdown replay button
+                if (computedResult.breakdown) {
+                    show('replay-breakdown-btn');
+                    $('replay-breakdown-btn').addEventListener('click', () => {
+                        renderBreakdownInto(
+                            'breakdown-replay-lines',
+                            'breakdown-replay-total',
+                            computedResult.breakdown,
+                            computedResult.salami
+                        );
+                        show('breakdown-replay-section');
+                        $('replay-breakdown-btn').disabled = true;
+                        $('replay-breakdown-btn').innerText = '📊 Breakdown Shown ✅';
+                    });
+                }
 
             } catch (err) {
                 bkashError('Error: ' + err.message);
